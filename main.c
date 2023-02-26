@@ -66,10 +66,11 @@ return (1);
 
 int tsh_help(char **args)
 {
+	int i;
+
 	if (!args)
 	{
 	}
-	int i;
 
 	printf("Type program names and arguments, and hit enter.\n");
 	printf("The following are built in:\n");
