@@ -26,6 +26,7 @@ int (*builtin_func[]) (char **) = {
 /*
  * List of builtin commands, followed by
  *  their corresponding functions.
+ *  tsh_num_builtins - entry point
  */
 
 
@@ -36,6 +37,7 @@ int tsh_num_builtins(void)
 
 /*
  * Builtin function implementations.
+ * tsh_cd - entry point
 */
 int tsh_cd(char **args)
 {
@@ -53,6 +55,10 @@ int tsh_cd(char **args)
 return (1);
 }
 
+/*
+ * tsh_help - entry point
+ */
+
 int tsh_help(char **args)
 {
 	int i;
@@ -69,11 +75,17 @@ printf("Use the man command for information on other programs.\n");
 return (1);
 }
 
+/*
+ * tsh_exit - netru point
+ */
 int tsh_exit(char **args)
 {
 return (0);
 }
 
+/*
+ * tsh_launch - entry
+ */
 int tsh_launch(char **args)
 {
 	pid_t pid;
@@ -99,6 +111,9 @@ int tsh_launch(char **args)
 	}
 	return (1);
 }
+/*
+ * tsh_execute - entry
+ */
 
 int tsh_execute(char **args)
 {
@@ -117,6 +132,9 @@ for (i = 0; i < tsh_num_builtins(); i++)
 
 return (tsh_launch(args));
 }
+/*
+ * tsh_read_line - entry
+ */
 
 #define BUFSIZE 1024
 char *tsh_read_line(void)
@@ -163,7 +181,9 @@ while (1)
 	}
 }
 }
-
+/*
+ * tsh_split_line - entry
+ */
 #define TSH_TOK_BUFSIZE 64
 #define TSH_TOK_DELIM " \t\r\n\a"
 char **tsh_split_line(char *line)
@@ -201,7 +221,9 @@ char **tsh_split_line(char *line)
 	tokens[position] = NULL;
 	return (tokens);
 }
-
+/*
+ * tsh_loop - entry
+ */
 void tsh_loop(void)
 {
 	char *line;
@@ -218,6 +240,9 @@ void tsh_loop(void)
 		free(args);
 	} while (status);
 }
+/*
+ * main - entry
+ */
 
 int main(int argc, char *argv)
 {
