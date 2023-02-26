@@ -111,7 +111,7 @@ for (i = 0; i < tsh_num_builtins(); i++)
 {
 	if (strcmp(args[0], builtin_str[i]) == 0)
 	{
-		return (*builtin_func[i])(args);
+		return ((*builtin_func[i])(args));
 	}
 }
 
@@ -144,7 +144,8 @@ while (1)
 	{
 		buffer[position] = '\0';
 		return (buffer);
-	} else
+	}
+	else
 	{
 		buffer[position] = c;
 	}
@@ -153,7 +154,7 @@ while (1)
 	if (position >= bufsize)
 	{
 		bufsize += BUFSIZE;
-		buffer = realloc(buffer,bufsize);
+		buffer = realloc(buffer, bufsize);
 		if (!buffer)
 		{
 			printf("tsh: reallocation error\n");
@@ -168,8 +169,8 @@ while (1)
 char **tsh_split_line(char *line)
 {
 	int bufsize = TSH_TOK_BUFSIZE, position = 0;
-	char **tokens = malloc(bufsize * sizeof(char*));
-	char *token ,**tokens_backup;
+	char **tokens = malloc(bufsize * sizeof(char *));
+	char *token, **tokens_backup;
 
 	if (!tokens)
 	{
@@ -179,7 +180,7 @@ char **tsh_split_line(char *line)
 
 	token = strtok(line, TSH_TOK_DELIM);
 	while (token != NULL)
-       	{
+	{
 	tokens[position] = token;
 	position++;
 
@@ -187,7 +188,7 @@ char **tsh_split_line(char *line)
 	{
 		bufsize += TSH_TOK_BUFSIZE;
 		tokens_backup = tokens;
-		tokens = realloc(tokens, bufsize * sizeof(char*));
+		tokens = realloc(tokens, bufsize * sizeof(char *));
 	if (!tokens)
 	{
 	free(tokens_backup);
@@ -207,15 +208,14 @@ void tsh_loop(void)
 	char **args;
 	int status;
 
-	do
-	{
+	do {
 		printf("root@teddy.user # ");
 		line = tsh_read_line();
 		args = tsh_split_line(line);
- 		status = tsh_execute(args);
+		status = tsh_execute(args);
 
-		free (line);
-		free (args);
+		free(line);
+		free(args);
 	} while (status);
 }
 
