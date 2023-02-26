@@ -64,7 +64,7 @@ return (1);
  * Return: ...
  */
 
-int tsh_help(char **args)
+int tsh_help()
 {
 	int i;
 
@@ -84,7 +84,7 @@ return (1);
  * tsh_exit - netru point
  * Return: ...
  */
-int tsh_exit(char **args)
+int tsh_exit()
 {
 return (0);
 }
