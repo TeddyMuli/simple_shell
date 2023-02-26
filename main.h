@@ -10,8 +10,6 @@ int tsh_help(void);
 int tsh_exit(void);
 int tsh_num_builtins(void);
 int tsh_cd(char **args);
-int tsh_help(char **args);
-int tsh_exit(char **args);
 int tsh_execute(char **args);
 
 
