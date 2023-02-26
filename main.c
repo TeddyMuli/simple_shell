@@ -86,7 +86,8 @@ return (1);
  */
 int tsh_exit(char **args)
 {
-return (0);
+if (!args)
+	return (0);
 }
 
 /*
