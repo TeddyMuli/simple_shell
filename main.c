@@ -62,7 +62,7 @@ return (1);
  * Return: ...
  */
 
-int tsh_help(char **args)
+int tsh_help(void)
 {
 	int i;
 
@@ -82,7 +82,7 @@ return (1);
  * tsh_exit - netru point
  * Return: ...
  */
-int tsh_exit(char **args)
+int tsh_exit(void)
 {
 return (0);
 }
@@ -254,7 +254,7 @@ void tsh_loop(void)
  * Return: 0
  */
 
-int main(int argc, char *argv)
+int main(void)
 {
 	tsh_loop();
 	return (EXIT_SUCCESS);
