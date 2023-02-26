@@ -13,7 +13,7 @@ int tsh_exit(char **args);
 char *builtin_str[] = {
 	"cd",
 	"help",
- 	"exit"
+	"exit"
 };
 
 
@@ -31,7 +31,7 @@ int (*builtin_func[]) (char **) = {
 
 int tsh_num_builtins(void)
 {
-       	return (sizeof(builtin_str) / sizeof(char *));
+	return (sizeof(builtin_str) / sizeof(char *));
 }
 
 /*
@@ -40,13 +40,13 @@ int tsh_num_builtins(void)
 int tsh_cd(char **args)
 {
 	if (args[1] == NULL)
-       	{
+	{
 		fprintf(stderr, "tsh: expected argument to \"cd\"\n");
 	}
-	else 
+	else
 	{
 	if (chdir(args[1]) != 0)
-       	{
+	{
 		perror("tsh");
 	}
 	}
@@ -56,6 +56,7 @@ return (1);
 int tsh_help(char **args)
 {
 	int i;
+
 	printf("Type program names and arguments, and hit enter.\n");
 	printf("The following are built in:\n");
 
@@ -87,13 +88,13 @@ int tsh_launch(char **args)
 	}
 	exit(EXIT_FAILURE);
 	}
-       	else if (pid < 0)
+	else if (pid < 0)
 	{
 		perror("tsh");
 	} else
 	{
 		do {
- 		waitpid(pid, &status, WUNTRACED);
+		waitpid(pid, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
 	return (1);
@@ -104,20 +105,17 @@ int tsh_execute(char **args)
 	int i;
 
 	if (args[0] == NULL)
-	{
-    // An empty command was entered.
-	return (1);
-	}
+		return (1);
 
 for (i = 0; i < tsh_num_builtins(); i++)
 {
 	if (strcmp(args[0], builtin_str[i]) == 0)
-       {
-	return (*builtin_func[i])(args);
-       }
+	{
+		return (*builtin_func[i])(args);
+	}
 }
 
-return tsh_launch(args);
+return (tsh_launch(args));
 }
 
 #define BUFSIZE 1024
@@ -139,16 +137,16 @@ while (1)
 	c = getchar();
 
 	if (c == EOF)
-       	{
-	exit(EXIT_SUCCESS);
-	}
-       	else if (c == '\n')
 	{
-	buffer[position] = '\0';
-	return (buffer);
+		exit(EXIT_SUCCESS);
+	}
+	else if (c == '\n')
+	{
+		buffer[position] = '\0';
+		return (buffer);
 	} else
 	{
-	buffer[position] = c;
+		buffer[position] = c;
 	}
 	position++;
 
@@ -161,7 +159,7 @@ while (1)
 			printf("tsh: reallocation error\n");
 			exit(EXIT_FAILURE);
 		}
-	} 
+	}
 }
 }
 
@@ -173,7 +171,8 @@ char **tsh_split_line(char *line)
 	char **tokens = malloc(bufsize * sizeof(char*));
 	char *token ,**tokens_backup;
 
-	if (!tokens) {
+	if (!tokens)
+	{
 	fprintf(stderr, "tsh: allocation error\n");
 	exit(EXIT_FAILURE);
 	}
