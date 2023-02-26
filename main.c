@@ -27,6 +27,7 @@ int (*builtin_func[]) (char **) = {
  * List of builtin commands, followed by
  *  their corresponding functions.
  *  tsh_num_builtins - entry point
+ *  Return: ...
  */
 
 
@@ -38,6 +39,7 @@ int tsh_num_builtins(void)
 /*
  * Builtin function implementations.
  * tsh_cd - entry point
+ * Return: ...
 */
 int tsh_cd(char **args)
 {
@@ -57,6 +59,7 @@ return (1);
 
 /*
  * tsh_help - entry point
+ * Return: ...
  */
 
 int tsh_help(char **args)
@@ -77,6 +80,7 @@ return (1);
 
 /*
  * tsh_exit - netru point
+ * Return: ...
  */
 int tsh_exit(char **args)
 {
@@ -85,6 +89,7 @@ return (0);
 
 /*
  * tsh_launch - entry
+ * Return: ...
  */
 int tsh_launch(char **args)
 {
@@ -113,6 +118,7 @@ int tsh_launch(char **args)
 }
 /*
  * tsh_execute - entry
+ * Return: ...
  */
 
 int tsh_execute(char **args)
@@ -134,6 +140,7 @@ return (tsh_launch(args));
 }
 /*
  * tsh_read_line - entry
+ * Return: ...
  */
 
 #define BUFSIZE 1024
@@ -183,6 +190,7 @@ while (1)
 }
 /*
  * tsh_split_line - entry
+ * Return: ...
  */
 #define TSH_TOK_BUFSIZE 64
 #define TSH_TOK_DELIM " \t\r\n\a"
@@ -223,6 +231,7 @@ char **tsh_split_line(char *line)
 }
 /*
  * tsh_loop - entry
+ * Return: ..
  */
 void tsh_loop(void)
 {
@@ -241,7 +250,8 @@ void tsh_loop(void)
 	} while (status);
 }
 /*
- * main - entry
+ * main - entr
+ * Return: 0
  */
 
 int main(int argc, char *argv)
