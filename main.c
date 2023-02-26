@@ -66,6 +66,9 @@ return (1);
 
 int tsh_help(char **args)
 {
+	if (!args)
+	{
+	}
 	int i;
 
 	printf("Type program names and arguments, and hit enter.\n");
