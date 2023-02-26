@@ -7,8 +7,8 @@
 #include "main.h"
 
 int tsh_cd(char **args);
-int tsh_help(char **args);
-int tsh_exit(char **args);
+int tsh_help(void);
+int tsh_exit(void);
 
 char *builtin_str[] = {
 	"cd",
