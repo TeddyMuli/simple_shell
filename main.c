@@ -7,8 +7,8 @@
 #include "main.h"
 
 int tsh_cd(char **args);
-int tsh_help(void);
-int tsh_exit(void);
+int tsh_help(char *);
+int tsh_exit(char *);
 
 char *builtin_str[] = {
 	"cd",
@@ -21,7 +21,9 @@ int (*builtin_func[]) (char **) = {
 	&tsh_cd,
 	&tsh_help,
 	&tsh_exit
+
 };
+
 
 /*
  * List of builtin commands, followed by
