@@ -7,8 +7,8 @@
 #include "main.h"
 
 int tsh_cd(char **args);
-int tsh_help(char *);
-int tsh_exit(char *);
+int tsh_help(char **);
+int tsh_exit(char **);
 
 char *builtin_str[] = {
 	"cd",
@@ -64,7 +64,7 @@ return (1);
  * Return: ...
  */
 
-int tsh_help(void)
+int tsh_help(char **)
 {
 	int i;
 
@@ -84,7 +84,7 @@ return (1);
  * tsh_exit - netru point
  * Return: ...
  */
-int tsh_exit(void)
+int tsh_exit(char **)
 {
 return (0);
 }
