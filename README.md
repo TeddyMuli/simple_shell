@@ -20,3 +20,4 @@ Compile
 ## How to use
 
 run the command "./hsh"
+Simple shell group project 
