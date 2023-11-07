@@ -23,7 +23,9 @@ int my_help(char **args)
 	for (; i < num_builtin(); i++)
 	{
 		printf("  -> %s\n", builtin_function_list[i]);
+
 	}
 	printf("Use the man command for information on other programs.\n\n");
 	return (-1);
 }
+
