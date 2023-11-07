@@ -1,12 +1,19 @@
 #include "main.h"
 
-/*
- * main - the main function
+/**
+ * main - function that checks if our shell is called
+ *
  * Return: 0 on success
-*/
-int main (void) {
-    
-    simple_shell();
-
-    return (0);
+ */
+int main(void)
+{
+	if (isatty(STDIN_FILENO) == 1)
+	{
+		simple_shell();
+	}
+	else
+	{
+		non_interactive();
+	}
+	return (0);
 }
