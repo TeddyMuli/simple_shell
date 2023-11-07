@@ -2,7 +2,7 @@
 
 ## Description
 
-This is an alx project meant to xpand our knowledge on the C programming language.
+This is an alx project meant to expand our knowledge on the C programming language.
 It requires us to write a shell for unix based systems.
 Its function is to read user input, execute it and show output.
 

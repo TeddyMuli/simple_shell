@@ -1,6 +1,7 @@
 #include "main.h"
 
 /**
+
  * my_env - prints environment variables
  * @args: arguments
  * 
@@ -20,4 +21,3 @@ int my_env(char **args)
     }
     return (-1);
 }
-
