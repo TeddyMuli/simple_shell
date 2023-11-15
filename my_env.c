@@ -1,23 +1,23 @@
 #include "main.h"
 
 /**
- * my_cd - changes working directory
- * @args: target directory
+
+ * my_env -This prints environment variables
+ * @args: arguments
  * 
- * Return: 1 if success, 0 otherwise
+ * Return: 1 on success
 */
-int my_cd(char **args)
+
+int my_env(char **args)
 {
-    if (args[1] == NULL)
+    int i = 0;
+    (void)(**args);
+
+    while (environ[i])
     {
-        fprintf(stderr, "expected argument\n");
-    }
-    else
-    {
-        if (chdir(args[1]) != 0)
-        {
-            perror("Error!!");
-        }
+        write(STDOUT_FILENO, environ[i], strlen(environ[i]));
+		write(STDOUT_FILENO, "\n", 1);
+		i++;
     }
     return (-1);
 }

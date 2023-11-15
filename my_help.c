@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * my_help - show help
+ * my_help - print help
  * @args: arguments
- * 
- * Return: 1 on success, 0 on failure
-*/
+ *
+ * Return: 1 on success, 0 otherwise
+ */
 int my_help(char **args)
 {
-	char *builtin_list[] = {
+	char *builtin_function_list[] = {
 		"cd",
 		"env",
 		"help",
@@ -22,9 +22,11 @@ int my_help(char **args)
 	printf("Built-in commands:\n");
 	for (; i < num_builtin(); i++)
 	{
-		printf("  -> %s\n", builtin_list[i]);
+		printf("  -> %s\n", builtin_function_list[i]);
+
 	}
 	printf("Use the man command for information on other programs.\n\n");
 	return (-1);
 }
+
 
