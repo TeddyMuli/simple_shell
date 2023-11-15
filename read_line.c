@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * read_line - read a line from stdin
+ * read_line:This read a line from stdin
  *
  * Return: pointer that points to a str with the line content
  */

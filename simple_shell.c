@@ -1,19 +1,20 @@
 #include "main.h"
 
 /**
- * non_interactive - non interactive cmd line interpreter
+ * simple_shell - cmd line interpreter
  *
  * Return: void
  */
-void non_interactive(void)
+void simple_shell(void)
 {
 	char *line;
 	char **args;
 	int status = -1;
 
 	do {
-		line = read_stream();
-		args = parse_line(line);
+		printf("simple_shell $ ");
+		line = read_line(); 
+		args = parse_line(line); 
 		status = execute_cmd(args);
 
 		free(line);
@@ -24,3 +25,4 @@ void non_interactive(void)
 		}
 	} while (status == -1);
 }
+
