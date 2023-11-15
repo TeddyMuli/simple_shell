@@ -13,8 +13,8 @@ void simple_shell(void)
 
 	do {
 		printf("simple_shell $ ");
-		line = read_line(); 
-		args = parse_line(line); 
+		line = read_line();
+		args = parse_line(line);
 		status = execute_cmd(args);
 
 		free(line);
